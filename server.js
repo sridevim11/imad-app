@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var objects={
-   var articleOne=:{
+var articles={
+   articleOne:{
     title:"Article One",
     heading:"Article1",
     date:"Sept, 2017",
@@ -22,8 +22,9 @@ var objects={
     <p>
         sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df vsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfvsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df
     </p>
-    </div>`};
-    var articleTwo=:{
+    </div>`},
+    
+    articleTwo:{
     title:"Article Two",
     heading:"Article2",
     date:"Oct, 2017",
@@ -39,8 +40,8 @@ var objects={
     <p>
         sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df vsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfvsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df
     </p>
-    </div>`};
-    var articleThree=:{
+    </div>`},
+    articleThree:{
     title:"Article Three",
     heading:"Article3",
     date:"Nov, 2017",
