@@ -5,13 +5,98 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var objects={
+   var articleOne=:{
+    title:"Article One",
+    heading:"Article1",
+    date:"Sept, 2017",
+    content:`
+    <div class="container">
+     <div>
+        <a href="/">Home</a>
+    </div>
+
+    <h1>
+    This is my article one and my webpage
+    </h1>
+    <p>
+        sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df vsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfvsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df
+    </p>
+    </div>`};
+    var articleTwo=:{
+    title:"Article Two",
+    heading:"Article2",
+    date:"Oct, 2017",
+    content:`
+    <div class="container">
+     <div>
+        <a href="/">Home</a>
+    </div>
+
+    <h1>
+    This is my article two and my webpage
+    </h1>
+    <p>
+        sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df vsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfvsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df
+    </p>
+    </div>`};
+    var articleThree=:{
+    title:"Article Three",
+    heading:"Article3",
+    date:"Nov, 2017",
+    content:`
+    <div class="container">
+     <div>
+        <a href="/">Home</a>
+    </div>
+
+    <h1>
+    This is my article three and my webpage
+    </h1>
+    <p>
+        sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df vsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd df sdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfvsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd dfsdfsdfs fs fdfs sdfsfd df
+    </p>
+    </div>`
+}};
+
+function createTemplate(data){
+    var title=data.title;
+    var date=data.date;
+    var heading=data.heading;
+    var content=data.content;
+    var htmlTemplate=`
+                <html>
+                    <head>
+                        <title>
+                            ${title}
+                        </title>
+                        <meta name="viewport" content="width-device-width initial-scale=1">
+                        <link href="/ui/style.css" type="text/css" rel="stylesheet"/>
+                    </head>
+                <body>
+                   <div class="container">
+                    <h1>
+                        ${heading}
+                    </h1>
+                    <div>
+                        ${date}
+                    </div>
+                    <div>
+                        ${content}
+                    </div>
+                    </div>
+                </body>
+                </html>`;
+    return htmlTemplate;
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 
 app.get('/article-one',function(req,res){
-   res.sendFile(path.join(__dirname,'ui','article-one.html')) ;
+   res.send(createTemplate(articleOne)) ;
 });
 app.get('/article-two',function(req,res){
    res.sendFile(path.join(__dirname,'ui','article-two.html')) ;
