@@ -15,8 +15,7 @@ click.onclick=function(){
     request.send(null);
   };
   
-  var nameInput=document.getElementById("name");
-  var name=nameInput.value;
+  
   var submit=document.getElementById("submit");
   submit.onclick=function(){
       
@@ -34,6 +33,9 @@ click.onclick=function(){
       ul.innerHTML=list; 
             }
     };
+     
+    var nameInput=document.getElementById("name");
+  var name=nameInput.value;
     request.open('GET','http://sridevim.imad.hasura-app.io/submit?name='+name,true);
     request.send(null);
      
